@@ -6,7 +6,7 @@ import random
 with open("commands.json") as custom_commands_file:
     custom_cmd = json.load(custom_commands_file)
 
-commandslist = ["/pyramid",]
+commandslist = ["/pyramid", "/readfile"]
 
 root = Tk(className="turtlerino")
 root.geometry("350x350+900+4")  # width x height, position of window width height

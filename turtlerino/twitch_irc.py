@@ -7,6 +7,10 @@ import time
 import json
 import colorsys
 
+with open("strings.txt") as myfile:
+    read_string = myfile.readlines()
+
+
 with open("account_options.txt") as myfile:
     oauth = myfile.readlines()[0:1]
     oauth = oauth[0].replace("oauth:", "").replace(" ", "")
@@ -160,5 +164,18 @@ def commands(message, channel,slash_me,color_each_msg):
         emote = " ".join(emote[2:])
         try:
             pyramid(int(number[1]), " " + emote + " ")
+        except:
+            pass
+
+    def readfile():
+        try:
+            for str_msg in read_string:
+                send(str_msg, channel,slash_me,color_each_msg)
+        except Exception:
+            pass
+
+    if "readfile" in message:
+        try:
+            readfile()
         except:
             pass
